@@ -10,11 +10,13 @@ public class PokemonDAO {
 			lista = new ArrayList<PokemonDTO>();
 		}
 
-		public void guardar(int id, String nombre, int id_general, String tipo, String ps,
-		 String ataque, String defensa, String ataque_especial, String defensa_especial, String velocidad) {
+		public void guardar(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
+				String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,
+				int nivel) {
 
-			PokemonDTO a = new PokemonDTO(id, nombre, id_general, tipo, ps, ataque, defensa, 
-					ataque_especial, defensa_especial, velocidad);
+			PokemonDTO a = new PokemonDTO( id,  nombre,  id_general,  tipo,  ps,  ataque,  defensa,
+					 ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
+					 nivel);
 			lista.add(a);
 
 		}
