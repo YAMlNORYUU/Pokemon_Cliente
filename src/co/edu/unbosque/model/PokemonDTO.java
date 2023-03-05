@@ -38,6 +38,14 @@ public class PokemonDTO {
 		this.nivel = nivel;
 	}
 
+	@Override
+	public String toString() {
+		return "PokemonDTO [id=" + id + ", nombre=" + nombre + ", id_general=" + id_general + ", tipo=" + tipo + ", ps="
+				+ ps + ", ataque=" + ataque + ", defensa=" + defensa + ", ataque_especial=" + ataque_especial
+				+ ", defensa_especial=" + defensa_especial + ", velocidad=" + velocidad + ", mote=" + mote
+				+ ", movimientos=" + movimientos + ", nivel=" + nivel + "]";
+	}
+
 	/**
 	 * @return the id
 	 */

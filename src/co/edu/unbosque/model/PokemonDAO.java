@@ -14,10 +14,16 @@ public class PokemonDAO {
 				String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,
 				int nivel) {
 
-			PokemonDTO a = new PokemonDTO( id,  nombre,  id_general,  tipo,  ps,  ataque,  defensa,
-					 ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
-					 nivel);
-			lista.add(a);
+			
+			if (lista.size()<6) {
+				
+				PokemonDTO a = new PokemonDTO( id,  nombre,  id_general,  tipo,  ps,  ataque,  defensa,
+						ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
+						nivel);
+				lista.add(a);
+			}else {
+				System.out.println("porque eres kevin");
+			}
 
 		}
 
@@ -42,25 +48,14 @@ public class PokemonDAO {
 			}
 		}
 
-		public void mostrarLista() {
+		public String mostrarpokemones() {
+			String tempText = "";
 
 			for (int i = 0; i < lista.size(); i++) {
-				System.out.println("");
-				System.out.println("ID = "+lista.get(i).getId());
-				System.out.println("NOMBRE = "+lista.get(i).getNombre());
-				System.out.println("ID GENERAL = "+lista.get(i).getId_general());
-				System.out.println("TIPO = "+lista.get(i).getTipo());
-				System.out.println("PS = "+lista.get(i).getPs());
-				System.out.println("ATAQUE = "+lista.get(i).getAtaque());
-				System.out.println("DEFENSA = "+lista.get(i).getDefensa());
-				System.out.println("ATAQUE ESPECIAL = "+lista.get(i).getAtaque_especial());
-				System.out.println("DEFENSA ESPECIAL = "+lista.get(i).getDefensa_especial());
-				System.out.println("VELOCIDAD = "+lista.get(i).getVelocidad());
-				System.out.println("");
-
-
+				tempText = tempText.concat(lista.get(i).toString()) + "\n\n";
 			}
 
+			return tempText;
 		}
 
 		public ArrayList<PokemonDTO> getLista() {

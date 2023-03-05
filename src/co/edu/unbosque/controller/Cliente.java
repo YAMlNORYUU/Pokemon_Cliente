@@ -2,6 +2,7 @@ package co.edu.unbosque.controller;
 
 import javax.swing.*;
 
+import co.edu.unbosque.model.PokemonDAO;
 import co.edu.unbosque.model.PokemonDTO;
 
 import java.io.IOException;
@@ -20,35 +21,28 @@ public class Cliente implements Runnable {
 	double num2;
 	char opr;
 	private ArrayList<PokemonDTO> lista;
+	private PokemonDAO dao;
 
-	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista) {
+	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao) {
 		super();
 		this.operacao = operacao;
 		this.cliente = cliente;
 		this.lista = lista;
+		this.dao = dao;
 	}
 
 	public void run() {
 		try {
 			PrintStream saida;
-			System.out.println("O cliente conectou ao servidor");
 
 			ObjectInputStream resultado = new ObjectInputStream(cliente.getInputStream());
 			ObjectOutputStream dados = new ObjectOutputStream(cliente.getOutputStream());
 
-			num1 = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
-			num2 = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
-
 			dados.writeInt(operacao);
-			dados.writeDouble(num1);
-			dados.writeDouble(num2);
+
 			dados.flush();
 
 //
-
-			double total = resultado.readDouble();
-
-			opr = resultado.readChar();
 
 			int id = resultado.readInt();
 			String nombre = resultado.readUTF();
@@ -64,9 +58,9 @@ public class Cliente implements Runnable {
 			String movimientos = resultado.readUTF();
 			int nivel = resultado.readInt();
 
-			System.out.println("Total de " + num1 + opr + num2 + " = " + total);
-//            System.out.println(obj[0]+" Soy la monda ");
-			System.out.println(nombre + velocidad);
+			dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
+					mote, movimientos, nivel);
+
 			resultado.close();
 			dados.close();
 		} catch (IOException e) {
