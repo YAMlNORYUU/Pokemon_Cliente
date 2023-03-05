@@ -1,5 +1,6 @@
 package co.edu.unbosque.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PokemonDAO {
@@ -26,18 +27,37 @@ public class PokemonDAO {
 			}
 
 		}
+		
+		public PokemonDTO buscarNombre(String nombre, ArrayList<PokemonDTO> lista) {
 
-		public boolean eliminar(int pos) {
+			PokemonDTO encontrado = null;
+
+			if (!lista.isEmpty()) {
+				for (int i = 0; i < lista.size(); i++) {
+					if (lista.get(i).getNombre().equals(nombre)) {
+						encontrado = lista.get(i);
+						return encontrado;
+					}
+				}
+			}
+			return encontrado;
+		}
+
+		public boolean eliminar(String nombre, ArrayList<PokemonDTO> lista) {
+
 			try {
-				lista.remove(pos);
+				PokemonDTO bus = buscarNombre(nombre, lista);
+				lista.remove(bus);
+
 				return true;
 
 			} catch (Exception e) {
-				return false;
+				e.printStackTrace();
 			}
+			return false;
 		}
 
-		public boolean actualizarNombre(int pos, String nom_nuevo) {
+		public boolean actualizarMote(int pos, String nom_nuevo) {
 			try {
 				lista.get(pos).setNombre(nom_nuevo);
 				;

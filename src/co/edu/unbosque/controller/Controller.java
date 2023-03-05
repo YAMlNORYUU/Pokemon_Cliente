@@ -24,16 +24,13 @@ public class Controller {
 			
 	
 		operacao = Integer.parseInt(
-				JOptionPane.showInputDialog("Qual operação desejada? 1= +, 2= -,3= X,4= /,5= ^,6= %,7= √"));
+				JOptionPane.showInputDialog("(1).Agregar 6 pokemones" + "\n" + "(2).Agrega un pokemon" +"\n" +"(3).coinar un pokemon" +"\n" +"(4).Mandar a la pc"));
 		
 		
 	switch (operacao) {
 	case 1:
+	
 		for (int i = 0; i < 6; i++) {
-
-			if (operacao <= 0 || operacao > 7) {
-				System.out.println("Você digitou uma operação inválida.");
-			}
 
 			Socket socket = new Socket("26.92.185.244", local);
 			/*
