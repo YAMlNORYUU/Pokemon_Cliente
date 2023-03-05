@@ -1,6 +1,12 @@
 package co.edu.unbosque.model;
 
-public class PokemonDTO {
+import java.io.Serializable;
+
+public class PokemonDTO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2547628952586701287L;
 	private int id;
 	private String nombre;
 	private int id_general;

@@ -3,19 +3,31 @@ package co.edu.unbosque.controller;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import co.edu.unbosque.model.Archivo;
 import co.edu.unbosque.model.PokemonDAO;
+
+
 
 public class Controller {
 	private PokemonDAO dao;
 	int operacao = 0;
 	int local = 12345;
+	
+	/**
+	 * Archivo para guardar informacion de los candidatos
+	 */
+	private Archivo archivo;
 
 	public Controller() {
+		archivo = new Archivo();
 
-		dao = new PokemonDAO();
+		dao = new PokemonDAO(archivo);
+
+
 	}
 
 	public void iniciar() throws UnknownHostException, IOException {

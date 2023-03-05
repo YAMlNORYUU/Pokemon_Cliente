@@ -6,9 +6,16 @@ import java.util.ArrayList;
 public class PokemonDAO {
 
 		private ArrayList<PokemonDTO> lista;
+		
+		/**
+		 * Archivo donde se guardara la informacion
+		 */
+		private Archivo archivo;
 
-		public PokemonDAO() {
+		public PokemonDAO(Archivo archivo) {
+			this.archivo = archivo;
 			lista = new ArrayList<PokemonDTO>();
+			lista = archivo.leerArchivo();
 		}
 
 		public void guardar(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
@@ -22,8 +29,10 @@ public class PokemonDAO {
 						ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
 						nivel);
 				lista.add(a);
+				archivo.escribirEnArchivo(lista);
 			}else {
 				System.out.println("porque eres kevin");
+				System.out.println(lista.size());
 			}
 
 		}
@@ -48,24 +57,32 @@ public class PokemonDAO {
 			try {
 				PokemonDTO bus = buscarNombre(nombre, lista);
 				lista.remove(bus);
+				archivo.getArchivo().delete();
+				archivo.getArchivo().createNewFile();
+				archivo.escribirEnArchivo(lista);
 
 				return true;
 
-			} catch (Exception e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			return false;
 		}
 
-		public boolean actualizarMote(int pos, String nom_nuevo) {
-			try {
-				lista.get(pos).setNombre(nom_nuevo);
-				;
-				return true;
-
+		public boolean modificarMote(String Nombre, String mote, ArrayList<PokemonDTO> lista)
+		 {
+			try {		
+				PokemonDTO bus = buscarNombre(Nombre,  lista );
+					bus.setMote(mote);
+					archivo.getArchivo().delete();
+					archivo.getArchivo().createNewFile();
+					archivo.escribirEnArchivo(lista);
+					return true;
+				
 			} catch (Exception e) {
-				return false;
+				e.printStackTrace();
 			}
+			return false;
 		}
 
 		public String mostrarpokemones() {
