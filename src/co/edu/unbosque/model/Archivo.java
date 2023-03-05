@@ -30,7 +30,7 @@ public class Archivo {
     /**
      * El archivo de destino
      */
-    private File archivo = new File("PokeIniciales/ayudadios.dat");
+    private File archivo = new File("PokeIniciales/pokemones.dat");
 
     /**
      * Metodo constructor
