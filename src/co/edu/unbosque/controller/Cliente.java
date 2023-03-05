@@ -1,108 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.unbosque.controller;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+import javax.swing.*;
 import java.io.IOException;
-import java.net.ServerSocket;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
-import co.edu.unbosque.view.View;
+public class Cliente implements Runnable{
 
-/**
- *
- * @author Nicolas Machado
- * @author Kevin Gonzales
- * 
- */
-public class Cliente extends Thread {
-	// initialize socket and input output streams
-	private Socket socket;
-	private ServerSocket server;
-	private Scanner sn;
-	private DataOutputStream out;
-	private DataInputStream in; // Input stream from server
-	private String address;
-	private int port;
-	private View vp;
+  int operacao = 0;
+    private Socket cliente;
+    double num1;
+    double num2;
+    char opr;
 
-	// constructor to put ip address and port
-	public Cliente(String address, int port) {
-		// initialize socket and input output streams
-		vp = new View();
-		this.socket = null;
-		this.server = null;
-		this.sn = new Scanner(System.in);
-		this.out = null;
-		this.address = address;
-		this.port = port;
+  
 
+
+
+	public Cliente(int operacao, Socket cliente) {
+		super();
+		this.operacao = operacao;
+		this.cliente = cliente;
 	}
 
-	@Override
-	public void run() {
 
-		// string to read message from input
-		String line = "";
 
-		// keep reading until "Over" is input
-		while (!line.equals("Over")) {
-			// establish a connection
-			try {
-				this.socket = new Socket(this.address, this.port);
-				vp.confirm("conectado: Bienvenido")
-				;
+    public void run() {
+        try {
+            PrintStream saida;
+            System.out.println("O cliente conectou ao servidor");
 
-				// sets timeout for server response
-				this.socket.setSoTimeout(2000); // 5 seconds
-				// sends output to the socket
-				this.out = new DataOutputStream(socket.getOutputStream());
+            ObjectInputStream resultado = new ObjectInputStream(cliente.getInputStream());
+            ObjectOutputStream dados = new ObjectOutputStream(cliente.getOutputStream());
 
-				// line = this.input.readLine();
-				line = sn.next();
-				this.out.writeUTF(line);
-				// close socket and output stream
-				this.out.close();
-				this.socket.close();
-				// Create a serverSocket to wait message from server
-				this.server = new ServerSocket(this.port + 1);
-				this.socket = server.accept();
-				// takes input from the client socket
-				this.in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-				// Print in server the client message
+            num1 = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+            num2 = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
 
-				System.out.println(in.readUTF());
-				this.in.close();
-				this.server.close();
-			} catch (SocketTimeoutException ste) {
-				vp.confirm("El servidor no responde, cerrando coneccion.");
-				line = "Over";
-				try {
-					this.socket.close();
-				} catch (IOException e) {
-					vp.confirm("Error cerrando socket: " + e.getMessage());
-				}
-			} catch (IOException i) {
-				vp.confirm("Error: " + i.getMessage());
-			}
-		}
+            
+            
+            dados.writeInt(operacao);
+            dados.writeDouble(num1);
+            dados.writeDouble(num2);
+            dados.flush();
 
-		// close the connection
-		try {
-			out.close();
-			socket.close();
-		} catch (IOException i) {
-			vp.confirm(i.getMessage());
-		}
+//            
+//            Object[] obj = (Object[]) resultado.readObject();
+            
+            double total = resultado.readDouble();
+            
+            opr = resultado.readChar();
+            
+            String a = resultado.readUTF();
+            
+            System.out.println(a);
+//            System.out.println(obj[0]);
+            System.out.println("Total de " + num1 + opr + num2 + " = " + total);
+//            System.out.println(obj[0]+" Soy la monda ");
 
-	}
-
+            resultado.close();
+            dados.close();
+        } catch (IOException  e) {
+            e.printStackTrace();
+        } 
+//        catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+    }
 }
