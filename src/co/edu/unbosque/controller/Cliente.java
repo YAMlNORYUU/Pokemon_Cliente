@@ -1,12 +1,16 @@
 package co.edu.unbosque.controller;
 
 import javax.swing.*;
+
+import co.edu.unbosque.model.PokemonDTO;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 public class Cliente implements Runnable{
 
@@ -15,20 +19,30 @@ public class Cliente implements Runnable{
     double num1;
     double num2;
     char opr;
-
+    private  ArrayList<PokemonDTO> lista;
   
 
 
 
-	public Cliente(int operacao, Socket cliente) {
+	
+
+
+
+    public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista) {
 		super();
 		this.operacao = operacao;
 		this.cliente = cliente;
+		this.lista = lista;
 	}
 
 
 
-    public void run() {
+
+
+
+
+
+	public void run() {
         try {
             PrintStream saida;
             System.out.println("O cliente conectou ao servidor");
@@ -46,20 +60,30 @@ public class Cliente implements Runnable{
             dados.writeDouble(num2);
             dados.flush();
 
-//            
-//            Object[] obj = (Object[]) resultado.readObject();
+//
             
             double total = resultado.readDouble();
             
             opr = resultado.readChar();
+           
             
-            String a = resultado.readUTF();
-            
-            System.out.println(a);
-//            System.out.println(obj[0]);
+        	 int id= resultado.readInt();
+        	 String nombre= resultado.readUTF();
+        	 int id_general= resultado.readInt();
+        	 String tipo= resultado.readUTF();
+        	 String ps= resultado.readUTF();
+        	 String ataque= resultado.readUTF();
+        	 String defensa= resultado.readUTF();
+        	 String ataque_especial= resultado.readUTF();
+        	 String defensa_especial= resultado.readUTF();
+        	 String velocidad= resultado.readUTF();
+        	 String mote= resultado.readUTF();
+        	 String movimientos= resultado.readUTF();
+        	 int nivel= resultado.readInt();
+ 
             System.out.println("Total de " + num1 + opr + num2 + " = " + total);
 //            System.out.println(obj[0]+" Soy la monda ");
-
+System.out.println(nombre+velocidad);
             resultado.close();
             dados.close();
         } catch (IOException  e) {

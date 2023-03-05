@@ -6,14 +6,16 @@ import java.net.UnknownHostException;
 
 import javax.swing.JOptionPane;
 
+import co.edu.unbosque.model.PokemonDAO;
+
 public class Controller {
-	
+	 private PokemonDAO dao;
 	  int operacao = 0;
       int local= 12345;
 	
 	public Controller() {
 
-		
+		dao = new PokemonDAO();
 	}
 	
 	public void iniciar() throws UnknownHostException, IOException {
@@ -28,7 +30,7 @@ public class Controller {
 		   Socket socket = new Socket("127.0.0.1", local);
 	        /*Cria um novo objeto Cliente com a conexão socket para que seja executado em um novo processo.
 	        Permitindo assim a conexão de vário clientes com o servidor.*/
-	        Cliente c = new Cliente(operacao,socket);
+	        Cliente c = new Cliente(operacao,socket,dao.getLista());
 	        Thread t = new Thread(c);
 	        t.start();
 	}
