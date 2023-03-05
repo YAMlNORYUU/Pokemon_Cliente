@@ -33,6 +33,8 @@ public class Controller {
 	        Cliente c = new Cliente(operacao,socket,dao.getLista());
 	        Thread t = new Thread(c);
 	        t.start();
+	        
+	        
 	}
 
 }
