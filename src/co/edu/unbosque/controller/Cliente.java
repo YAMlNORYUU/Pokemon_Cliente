@@ -58,8 +58,13 @@ public class Cliente implements Runnable {
 			String movimientos = resultado.readUTF();
 			int nivel = resultado.readInt();
 
-			dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
-					mote, movimientos, nivel);
+			try {
+				dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
+						mote, movimientos, nivel);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			resultado.close();
 			dados.close();
