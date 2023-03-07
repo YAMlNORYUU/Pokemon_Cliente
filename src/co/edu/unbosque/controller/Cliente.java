@@ -73,7 +73,6 @@ public class Cliente implements Runnable {
 			String mote = resultado.readUTF();
 			String movimientos = resultado.readUTF();
 			int nivel = resultado.readInt();
-<<<<<<< HEAD
 			
 			
 			if (operacao == 1) {
@@ -89,21 +88,10 @@ public class Cliente implements Runnable {
 			
 			
 System.out.println(operacao);
-=======
-
-			try {
-				dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
-						mote, movimientos, nivel);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
->>>>>>> 842b377ba5f83b381b0b9faa7d40713e4468e91e
 			resultado.close();
 			dados.close();
 		
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
