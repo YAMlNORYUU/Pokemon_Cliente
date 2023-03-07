@@ -22,7 +22,7 @@ public class PokemonDAO {
 
 		public void guardar(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
 				String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,
-				int nivel) {
+				int nivel) throws Exception {
 
 			
 			if (lista.size()<6) {
@@ -33,8 +33,12 @@ public class PokemonDAO {
 				lista.add(a);
 				archivo.escribirEnArchivo(lista);
 			}else {
+<<<<<<< HEAD
 				System.out.println("Tu Tienes ya 6 pokemones");
 			
+=======
+				throw new Exception("No ingresar caracteres especiales, ni numeros en el nombre");
+>>>>>>> 842b377ba5f83b381b0b9faa7d40713e4468e91e
 			}
 
 		}
