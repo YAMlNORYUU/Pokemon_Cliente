@@ -15,21 +15,25 @@ import java.util.ArrayList;
 
 public class Cliente implements Runnable {
 
-	int operacao = 0;
+	private int operacao = 0;
 	private Socket cliente;
-	double num1;
-	double num2;
-	char opr;
+
 	private ArrayList<PokemonDTO> lista;
 	private PokemonDAO dao;
+	private int selec;
 
-	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao) {
+
+
+	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao, int selec) {
 		super();
 		this.operacao = operacao;
 		this.cliente = cliente;
 		this.lista = lista;
 		this.dao = dao;
+		this.selec = selec;
 	}
+
+
 
 	public void run() {
 		try {
@@ -37,12 +41,24 @@ public class Cliente implements Runnable {
 
 			ObjectInputStream resultado = new ObjectInputStream(cliente.getInputStream());
 			ObjectOutputStream dados = new ObjectOutputStream(cliente.getOutputStream());
-
+			if (operacao == 1) {
+	
+				
 			dados.writeInt(operacao);
 
 			dados.flush();
+			
+			}else if (operacao == 2) {
+				
+				dados.writeInt(operacao);
+				dados.writeInt(selec);
+				dados.flush();
+				
+			}
 
-//
+			
+			
+			
 
 			int id = resultado.readInt();
 			String nombre = resultado.readUTF();
@@ -57,15 +73,28 @@ public class Cliente implements Runnable {
 			String mote = resultado.readUTF();
 			String movimientos = resultado.readUTF();
 			int nivel = resultado.readInt();
-
+			
+			
+			if (operacao == 1) {
+				
 			dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
 					mote, movimientos, nivel);
-
+			
+			}else if (operacao == 2) {
+				
+				dao.guardarPc(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad, mote, movimientos, nivel);
+				
+			}
+			
+			
+System.out.println(operacao);
 			resultado.close();
 			dados.close();
+		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 //        catch (ClassNotFoundException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

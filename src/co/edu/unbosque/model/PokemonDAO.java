@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class PokemonDAO {
 
 		private ArrayList<PokemonDTO> lista;
+		private ArrayList<PokemonDTO> pc;
 		
 		/**
 		 * Archivo donde se guardara la informacion
@@ -15,6 +16,7 @@ public class PokemonDAO {
 		public PokemonDAO(Archivo archivo) {
 			this.archivo = archivo;
 			lista = new ArrayList<PokemonDTO>();
+			pc = new ArrayList<PokemonDTO>();
 			lista = archivo.leerArchivo();
 		}
 
@@ -31,11 +33,29 @@ public class PokemonDAO {
 				lista.add(a);
 				archivo.escribirEnArchivo(lista);
 			}else {
-				System.out.println("porque eres kevin");
-				System.out.println(lista.size());
+				System.out.println("Tu Tienes ya 6 pokemones");
+			
 			}
 
 		}
+		
+
+		public void guardarPc(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
+				String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,
+				int nivel) {
+
+			
+		
+				
+				PokemonDTO a = new PokemonDTO( id,  nombre,  id_general,  tipo,  ps,  ataque,  defensa,
+						ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
+						nivel);
+				pc.add(a);
+		
+			
+
+		}
+		
 		
 		public PokemonDTO buscarNombre(String nombre, ArrayList<PokemonDTO> lista) {
 
@@ -88,8 +108,8 @@ public class PokemonDAO {
 		public String mostrarpokemones() {
 			String tempText = "";
 
-			for (int i = 0; i < lista.size(); i++) {
-				tempText = tempText.concat(lista.get(i).toString()) + "\n\n";
+			for (int i = 0; i < pc.size(); i++) {
+				tempText = tempText.concat(pc.get(i).toString()) + "\n\n";
 			}
 
 			return tempText;
