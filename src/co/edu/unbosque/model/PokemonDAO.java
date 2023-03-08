@@ -7,6 +7,9 @@ public class PokemonDAO {
 
 		private ArrayList<PokemonDTO> lista;
 		private ArrayList<PokemonDTO> pc;
+		private ArrayList<PokemonDTO> caja1;
+		private ArrayList<PokemonDTO> caja2;
+		private ArrayList<PokemonDTO> caja3;
 		
 		/**
 		 * Archivo donde se guardara la informacion
@@ -17,6 +20,10 @@ public class PokemonDAO {
 			this.archivo = archivo;
 			lista = new ArrayList<PokemonDTO>();
 			pc = new ArrayList<PokemonDTO>();
+			caja1 = new ArrayList<PokemonDTO>();
+			caja2 = new ArrayList<PokemonDTO>();
+			caja3 = new ArrayList<PokemonDTO>();
+
 			lista = archivo.leerArchivo();
 		}
 
@@ -31,13 +38,13 @@ public class PokemonDAO {
 						ataque_especial,  defensa_especial,  velocidad,  mote,  movimientos,
 						nivel);
 				lista.add(a);
-				archivo.escribirEnArchivo(lista);
+			
 			}else {
 
 				System.out.println("Tu Tienes ya 6 pokemones");
 			
 
-				throw new Exception("No ingresar caracteres especiales, ni numeros en el nombre");
+			
 
 			}
 
@@ -79,18 +86,38 @@ public class PokemonDAO {
 		public boolean eliminar(String nombre, ArrayList<PokemonDTO> lista) {
 
 			try {
+				
+		
 				PokemonDTO bus = buscarNombre(nombre, lista);
 				lista.remove(bus);
-				archivo.getArchivo().delete();
-				archivo.getArchivo().createNewFile();
-				archivo.escribirEnArchivo(lista);
+		
 
 				return true;
 
-			} catch (IOException e) {
-				e.printStackTrace();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+				return false;
 			}
-			return false;
+			
+		
+		}
+		public boolean eliminarPos(String nombre, ArrayList<PokemonDTO> lista) {
+
+			try {
+				
+		
+				PokemonDTO bus = buscarNombre(nombre, lista);
+				lista.remove(bus);
+		
+
+				return true;
+
+			} catch (Exception e2) {
+				e2.printStackTrace();
+				return false;
+			}
+			
+		
 		}
 
 		public boolean modificarMote(String Nombre, String mote, ArrayList<PokemonDTO> lista)
@@ -119,12 +146,82 @@ public class PokemonDAO {
 			return tempText;
 		}
 
+		/**
+		 * @return the caja1
+		 */
+		public ArrayList<PokemonDTO> getCaja1() {
+			return caja1;
+		}
+
+		/**
+		 * @param caja1 the caja1 to set
+		 */
+		public void setCaja1(ArrayList<PokemonDTO> caja1) {
+			this.caja1 = caja1;
+		}
+
+		/**
+		 * @return the caja2
+		 */
+		public ArrayList<PokemonDTO> getCaja2() {
+			return caja2;
+		}
+
+		/**
+		 * @param caja2 the caja2 to set
+		 */
+		public void setCaja2(ArrayList<PokemonDTO> caja2) {
+			this.caja2 = caja2;
+		}
+
+		/**
+		 * @return the caja3
+		 */
+		public ArrayList<PokemonDTO> getCaja3() {
+			return caja3;
+		}
+
+		/**
+		 * @param caja3 the caja3 to set
+		 */
+		public void setCaja3(ArrayList<PokemonDTO> caja3) {
+			this.caja3 = caja3;
+		}
+
 		public ArrayList<PokemonDTO> getLista() {
 			return lista;
 		}
 
 		public void setLista(ArrayList<PokemonDTO> lista) {
 			this.lista = lista;
+		}
+
+		/**
+		 * @return the pc
+		 */
+		public ArrayList<PokemonDTO> getPc() {
+			return pc;
+		}
+
+		/**
+		 * @param pc the pc to set
+		 */
+		public void setPc(ArrayList<PokemonDTO> pc) {
+			this.pc = pc;
+		}
+
+		/**
+		 * @return the archivo
+		 */
+		public Archivo getArchivo() {
+			return archivo;
+		}
+
+		/**
+		 * @param archivo the archivo to set
+		 */
+		public void setArchivo(Archivo archivo) {
+			this.archivo = archivo;
 		}
 
 }

@@ -86,8 +86,7 @@ public class Cliente implements Runnable {
 				
 			}
 			
-			
-System.out.println(operacao);
+
 			resultado.close();
 			dados.close();
 		

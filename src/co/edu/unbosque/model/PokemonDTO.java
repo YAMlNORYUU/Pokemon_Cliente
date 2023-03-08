@@ -51,6 +51,13 @@ public class PokemonDTO implements Serializable{
 				+ ", defensa_especial=" + defensa_especial + ", velocidad=" + velocidad + ", mote=" + mote
 				+ ", movimientos=" + movimientos + ", nivel=" + nivel + "]";
 	}
+	
+	public String info() {
+		return  id +"\n"+ " nombre=" + nombre + "\n"+ " id_general=" + id_general +"\n"+ " tipo=" + tipo +"\n"+ " ps="
+				+ ps +"\n"+ " ataque=" + ataque +"\n"+ " defensa=" + defensa +"\n"+ " ataque_especial=" + ataque_especial
+				+"\n"+ " defensa_especial=" + defensa_especial +"\n"+ " velocidad=" + velocidad +"\n"+ " mote=" + mote
+				+"\n"+ " movimientos=" + movimientos +"\n"+ " nivel=" + nivel ;
+	}
 
 	/**
 	 * @return the id
