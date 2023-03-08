@@ -27,10 +27,22 @@ public class Pokemones_panel extends JPanel {
 
 	private JLabel titulo, subtitulo,fondo_grid;
 	private JButton b_atras, b_atras_caja, b_siguiente_caja;
-
+	private InfoPokemon info_pokemon;
+	private Iniciales iniciales;
 	private Botonera caja;
 	public Pokemones_panel() {
 
+		iniciales = new Iniciales();
+
+        JScrollPane scroll2 = new JScrollPane(iniciales);
+        scroll2.setBounds(80, 100, 200, 440);
+        scroll2.getViewport().setOpaque(false);
+        scroll2.setOpaque(false);
+        scroll2.setBorder(null);
+
+
+        add(scroll2);
+        
 		setSize(1200, 700);
 		setLayout(null);
 		setVisible(false);
@@ -52,7 +64,7 @@ public class Pokemones_panel extends JPanel {
 		caja = new Botonera();
 	
 		JScrollPane scroll = new JScrollPane(caja);
-		scroll.setBounds(80, 100, 1040, 440);
+		scroll.setBounds(320, 100, 840, 440);
 		scroll.getViewport().setOpaque(false);
 		scroll.setOpaque(false);
 		scroll.setBorder(null);
@@ -82,6 +94,8 @@ public class Pokemones_panel extends JPanel {
 		b_siguiente_caja.setBounds(800, 50, 150, 50);
 		b_siguiente_caja.setActionCommand("siguiente_caja");
 		b_siguiente_caja.setVisible(true);
+		
+		info_pokemon = new InfoPokemon();
 		
 		titulo = new JLabel("2 GENERACION");
 		titulo.setBounds(460, 0, 300, 100);
@@ -138,6 +152,14 @@ public class Pokemones_panel extends JPanel {
 	 */
 	public Botonera getCaja() {
 		return caja;
+	}
+
+	public InfoPokemon getInfo_pokemon() {
+		return info_pokemon;
+	}
+
+	public void setInfo_pokemon(InfoPokemon info_pokemon) {
+		this.info_pokemon = info_pokemon;
 	}
 
 	/**

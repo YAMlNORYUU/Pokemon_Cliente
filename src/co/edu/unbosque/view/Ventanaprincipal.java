@@ -30,7 +30,16 @@ public class Ventanaprincipal extends JFrame {
 	JPanel menu;
 	JLabel fondo_menu, lugia, ho_oh;
 	Pokemones_panel panel_pokemones;
-	InfoPokemon info_pokemon;
+
+	public Iniciales getIniciales() {
+		return iniciales;
+	}
+
+	public void setIniciales(Iniciales iniciales) {
+		this.iniciales = iniciales;
+	}
+
+	Iniciales iniciales;
 
 	/**
 	 * Metodo en el que asignamos las caracteristicas a cada atributo
@@ -41,8 +50,8 @@ public class Ventanaprincipal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		info_pokemon = new InfoPokemon();
 		panel_pokemones = new Pokemones_panel();
+		iniciales = new Iniciales();
 		
 		fondo_menu = new JLabel();
 		fondo_menu.setBounds(0, 0, 1180, 660);
@@ -143,14 +152,6 @@ public class Ventanaprincipal extends JFrame {
 
 	public void setHo_oh(JLabel ho_oh) {
 		this.ho_oh = ho_oh;
-	}
-
-	public InfoPokemon getInfo_pokemon() {
-		return info_pokemon;
-	}
-
-	public void setInfo_pokemon(InfoPokemon info_pokemon) {
-		this.info_pokemon = info_pokemon;
 	}
 
 	public JPanel getMenu() {
