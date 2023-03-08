@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import co.edu.unbosque.model.Archivo;
 import co.edu.unbosque.model.PokemonDAO;
 import co.edu.unbosque.view.Ventana_general;
+import co.edu.unbosque.view.View;
 
 
 
@@ -244,18 +245,18 @@ public class Controller implements ActionListener{
 
 			if (vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().isVisible()) {
 				vp.getV_principal().getPanel_pokemones().getB_atras_caja().setVisible(false);
-				System.out.println("ya no puedes retroceder mas");
+				 vp.getJp().mostrarInformacion("ya no puedes retroceder mas");
 			}else if(vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().isVisible()){
 				vp.getV_principal().getPanel_pokemones().getB_atras_caja().setEnabled(false);
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().setVisible(false);
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().setVisible(true);
 				vp.getV_principal().getPanel_pokemones().getSubtitulo().setText("Caja 1");;
-				System.out.println("ves la caja numero 2");
+				 vp.getJp().mostrarInformacion("ves la caja numero 2");
 			}else if(vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().isVisible()) {
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().setVisible(false);
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().setVisible(true);
 				vp.getV_principal().getPanel_pokemones().getSubtitulo().setText("Caja 2");;
-				System.out.println("ves la caja numero 3");
+				 vp.getJp().mostrarInformacion("ves la caja numero 3");
 			}
 			//			System.out.println("funciono");
 
@@ -266,15 +267,15 @@ public class Controller implements ActionListener{
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().setVisible(true);
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().setVisible(false);
 				vp.getV_principal().getPanel_pokemones().getSubtitulo().setText("Caja 2");
-				System.out.println("ves la caja numero 1");
+				 vp.getJp().mostrarInformacion("ves la caja numero 1");
 			}else if(vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().isVisible()){
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().setVisible(true);
 				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().setVisible(false);
 				vp.getV_principal().getPanel_pokemones().getSubtitulo().setText("Caja 3");;
-				System.out.println("ves la caja numero 2");
+				 vp.getJp().mostrarInformacion("ves la caja numero 2");
 			}else if(vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().isVisible()) {
 				vp.getV_principal().getPanel_pokemones().getB_siguiente_caja().setEnabled(false);
-				System.out.println("ya no puedes avanzar mas");
+				 vp.getJp().mostrarError("ya no puedes avanzar mas");
 			}
 			//			System.out.println("yo tambien funciono");
 
