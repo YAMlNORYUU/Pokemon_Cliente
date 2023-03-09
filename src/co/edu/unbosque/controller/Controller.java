@@ -333,8 +333,10 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().remove(j);
 						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().remove(j);
+						
+//						dao.buscar(dao.getCaja3().get(j).getNombre(), vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).getText(), vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().size());
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().remove(j);
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
@@ -368,8 +370,8 @@ if (aux1==0) {
 				if (aux == 0) {
 					
 			String aux1 = vp.getJp().tomarDato("En que caja quiere meterlo");
-			int aux11 = Integer.parseInt(aux1);
 			try {
+			int aux11 = Integer.parseInt(aux1);
 				
 		
 		if (aux11 == 1) {
@@ -387,7 +389,7 @@ if (aux1==0) {
 			dao.eliminar(dao.getCaja1().get(dao.getCaja1().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 			System.out.println(aux11);
-			asignarOyentes();
+	
 			
 			
 		}else if (aux11 == 2) {
@@ -404,7 +406,7 @@ if (aux1==0) {
 			
 			dao.eliminar(dao.getCaja2().get(dao.getCaja2().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
-			asignarOyentes();
+		
 		
 		}else if (aux11 == 3) {
 			
@@ -421,7 +423,7 @@ if (aux1==0) {
 			
 			dao.eliminar(dao.getCaja3().get(dao.getCaja3().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
-			asignarOyentes();
+			
 			
 		}
 			} catch (Exception e2) {

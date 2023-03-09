@@ -2,6 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PokemonDAO {
 
@@ -83,6 +84,20 @@ public class PokemonDAO {
 			return encontrado;
 		}
 
+		
+		public int buscar(String aux,String aux1,int xd) {
+			int aux12 = 0;
+			for (int i = 0; i < xd; i++) {
+				
+				
+				if (aux.equals(aux1)) {
+					return i;
+					
+				}
+			}
+			return aux12;
+			
+		}
 		public boolean eliminar(String nombre, ArrayList<PokemonDTO> lista) {
 
 			try {
