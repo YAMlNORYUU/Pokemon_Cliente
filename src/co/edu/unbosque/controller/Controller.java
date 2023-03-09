@@ -172,66 +172,7 @@ public class Controller implements ActionListener{
 
 	}
 
-	//	
-	//	public void iniciar() throws UnknownHostException, IOException {
-	//		
-	//		
-	//	cargarBase();
-	//		
-	//
-	//		while (true) {
-	//			try {
-	//				
-	//		
-	//	
-	//		operacao = Integer.parseInt(
-	//				JOptionPane.showInputDialog("(1).Agregar 6 pokemones" + "\n" + "(2).Agrega un pokemon" +"\n" +"(3).coinar un pokemon" +"\n" +"(4).Mandar a la pc"));
-	//		
-	//		
-	//	switch (operacao) {
-	//	case 1:
-	//	
-	//		for (int i = 0; i < 6; i++) {
-	//
-	//			Socket socket = new Socket("127.0.0.1", local);
-	//			/*
-	//			 * Cria um novo objeto Cliente com a conexão socket para que seja executado em
-	//			 * um novo processo. Permitindo assim a conexão de vário clientes com o
-	//			 * servidor.
-	//			 */
-	//			Cliente c = new Cliente(operacao, socket, dao.getLista(), dao,aux11);
-	//
-	//			c.run();
-	//
-	//
-	//		}
-	//		System.out.println(dao.mostrarpokemones());
-	//		break;
-	//	case 2:
-	//		
-	//		Socket socket = new Socket("127.0.0.1", local);
-	//		/*
-	//		 * Cria um novo objeto Cliente com a conexão socket para que seja executado em
-	//		 * um novo processo. Permitindo assim a conexão de vário clientes com o
-	//		 * servidor.
-	//		 */
-	//		Cliente c = new Cliente(operacao, socket, dao.getLista(), dao,aux11);
-	//
-	//		c.run();
-	//		
-	//		break;
-	//
-	//	default:
-	//		break;
-	//	}
-	//			} catch (Exception e) {
-	//				// TODO: handle exception
-	//			}	
-	//		
-	//	}
-	//	}
-	//	
-	//	
+		
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -253,6 +194,12 @@ if (aux1==0) {
 }else {
 	vp.getV_principal().getPanel_pokemones().setVisible(true);
 	vp.getV_principal().getMenu().setVisible(false);
+	
+	for (int i = 0; i < vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().size(); i++) {
+		
+		ImageIcon icono = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(i).setIcon(icono);
+	}
 }
 
 		}
@@ -439,6 +386,7 @@ if (aux1==0) {
 			
 			dao.eliminar(dao.getCaja1().get(dao.getCaja1().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
+			System.out.println(aux11);
 			asignarOyentes();
 			
 			
