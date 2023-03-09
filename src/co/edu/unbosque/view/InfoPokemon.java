@@ -14,29 +14,125 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 //import co.edu.unbosque.modelo.Modelo_fachada;
-
+/**
+ * 
+ * @author KEVIN
+ * @author NICOLAS
+ * @author JOSE
+ * 
+ *  * JPanel encargado de la informacion de los pokemones
+ *
+ */
 public class InfoPokemon extends JPanel {
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la id y id general del pokemon
+	 * 
+	 */
 	private JLabel id_text, id_general_text;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del nombre, id numerico y id general numerico del pokemon y su imagen
+	 * 
+	 */
 	private JLabel nombre_pokemon, id, id_general, imagen_pokemon;
+	/**
+	 * Atributo tipo JButton que se encarga de ir al menu 
+	 * 
+	 */
 	private JButton b_atras;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del tipo
+	 * 
+	 */
 	private JLabel tipo;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la categoria
+	 * 
+	 */
 	private JLabel categoria;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la habilidad numerica
+	 * 
+	 */
 	private JLabel habilidad;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la habilidad
+	 * 
+	 */
 	private JLabel habilidad_text;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la debilidad numerica
+	 * 
+	 */
 	private JLabel debilidad;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la debilidad 
+	 * 
+	 */
 	private JLabel debilidad_text;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del peso numerico
+	 * 
+	 */
 	private JLabel peso;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion de la altura numerico
+	 * 
+	 */
 	private JLabel altura;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del habitad numerico
+	 * 
+	 */
 	private JLabel habitad;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del color
+	 * 
+	 */
 	private JLabel color;
+	/**
+	 * Atributo tipo JLabel Muestra la imformacion del peso
+	 * 
+	 */
 	private JLabel peso_text;
+	/**
+	 * Atributo tipo JLabel Muestra el texto del peso
+	 * 
+	 */
 	private JLabel altura_text;
+	/**
+	 * Atributo tipo JLabel Muestra el texto de la altura
+	 * 
+	 */
 	private JLabel tipo_text;
+	/**
+	 * Atributo tipo JLabel Muestra el texto del tipo
+	 * 
+	 */
 	private JLabel categoria_text;
+	/**
+	 * Atributo tipo JLabel Muestra el texto de la categoria
+	 * 
+	 */
 	private JLabel habitad_text;
+	/**
+	 * Atributo tipo JLabel Muestra el texto del habitad
+	 * 
+	 */
 	private JLabel color_text;
+	/**
+	 * Atributo tipo ImageIcon Muestra la imagen de los pokemones
+	 * 
+	 */
 	private ImageIcon imagen;
+	/**
+	 * Atributo tipo String que se ecnarga de guardar la ruta de la imagen
+	 */
 	private String file_img;
+
+	/**
+	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * <b>post</b> se instancian los atributos <br>
+	 */
 
 	public InfoPokemon() {
 

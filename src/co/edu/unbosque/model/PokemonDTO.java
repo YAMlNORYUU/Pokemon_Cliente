@@ -1,29 +1,83 @@
 package co.edu.unbosque.model;
 
 import java.io.Serializable;
-
-public class PokemonDTO implements Serializable{
-	/**
-	 * 
-	 */
+/**
+ * 
+ * @author KEVIN
+ * @author NICOLAS
+ * @author JOSE
+ * 
+ *         Clase encargada de instanciar los Atributos del pokemon
+ */
+public class PokemonDTO implements Serializable {
+	
 	private static final long serialVersionUID = -2547628952586701287L;
+	/**
+	 * Atributo de tipo int se encarga de guardar el id del pokemon
+	 */
 	private int id;
+	/**
+	 * Atributo de tipo String se encarga de guardar el nombre del pokemon
+	 */
 	private String nombre;
+	/**
+	 * Atributo de tipo int se encarga de guardar el id_general del pokemon
+	 */
 	private int id_general;
+	/**
+	 * Atributo de tipo String se encarga de guardar el tipo del pokemon
+	 */
 	private String tipo;
+	/**
+	 * Atributo de tipo String se encarga de guardar el ps del pokemon
+	 */
 	private String ps;
+	/**
+	 * Atributo de tipo String se encarga de guardar el ataque del pokemon
+	 */
 	private String ataque;
+	/**
+	 * Atributo de tipo String se encarga de guardar el defensa del pokemon
+	 */
 	private String defensa;
+	/**
+	 * Atributo de tipo String se encarga de guardar el ataque_especial del pokemon
+	 */
 	private String ataque_especial;
+	/**
+	 * Atributo de tipo String se encarga de guardar el defensa_especial del pokemon
+	 */
 	private String defensa_especial;
+	/**
+	 * Atributo de tipo String se encarga de guardar el velocidad del pokemon
+	 */
 	private String velocidad;
+	/**
+	 * Atributo de tipo String se encarga de guardar el mote del pokemon
+	 */
 	private String mote;
+	/**
+	 * Atributo de tipo String se encarga de guardar el movimientos del pokemon
+	 */
 	private String movimientos;
+	/**
+	 * Atributo de tipo int se encarga de guardar el nivel del pokemon
+	 */
 	private int nivel;
 
+	/**
+	 * Metodo constructor 
+	 * <b>post</b> se instancian los atributos <br>
+	 */
 	public PokemonDTO() {
 		// TODO Auto-generated constructor stub
 	}
+
+	/**
+	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * <b>post</b> se instancian los atributos <br>
+	 */
+
 
 	public PokemonDTO(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
 			String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,

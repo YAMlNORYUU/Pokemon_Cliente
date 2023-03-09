@@ -1,11 +1,10 @@
 package co.edu.unbosque.view;
-/*
- * @author ANGEL
- * @author SANTIAGO
- * @author SHARICK
+/**
+ * Panel que se ecnarga de mostrar el ArryList de pokemones
  * 
- * Aquí lo que hemos hecho es crear un cojuto de label, botones, campos de texto y traer a lista pokemon a esta ventana, para su diseño en si.
- *
+ * @author Kevin
+ * @author Nicolas
+ * @author jose
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,12 +23,29 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class Pokemones_panel extends JPanel {
-
+	/**
+	 * Atributo tipo JLabel Que muestran la informacion de las cajas y el fondo del
+	 * panel
+	 */
 	private JLabel titulo, subtitulo,fondo_grid;
-	private JButton b_atras, b_atras_caja, b_siguiente_caja;
-	private JButton eliminar;
+	/**
+	 * Atributo tipo JButton Que muestran los botones para regresar al menu, y pasar
+	 * a la siguiente pagina o volver a la anterior y eliminar
+	 */
+	private JButton b_atras, b_atras_caja, b_siguiente_caja, eliminar;
+	/**
+	 * JPanel de informacion de pokemones principales del usuario
+	 */
 	private Iniciales iniciales;
+	/**
+	 * JPanel de ArrayList de botones que muestra las imagenes de los pokemones
+	 */
 	private Botonera caja;
+	/**
+	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * <b>post</b> se instancian los atributos <br>
+	 */
+
 	public Pokemones_panel() {
 
 		setSize(1200, 700);
@@ -125,58 +141,108 @@ public class Pokemones_panel extends JPanel {
 		add(fondo_grid);
 		add(b_siguiente_caja);
 	}
-
-	public JButton getB_atras_caja() {
-		return b_atras_caja;
+	/**
+	 * @return the titulo
+	 */
+	public JLabel getTitulo() {
+		return titulo;
 	}
-
-	public void setB_atras_caja(JButton b_atras_caja) {
-		this.b_atras_caja = b_atras_caja;
+	/**
+	 * @param titulo the titulo to set
+	 */
+	public void setTitulo(JLabel titulo) {
+		this.titulo = titulo;
 	}
-
-	public JButton getB_siguiente_caja() {
-		return b_siguiente_caja;
+	/**
+	 * @return the subtitulo
+	 */
+	public JLabel getSubtitulo() {
+		return subtitulo;
 	}
-
-	public void setB_siguiente_caja(JButton b_siguiente_caja) {
-		this.b_siguiente_caja = b_siguiente_caja;
+	/**
+	 * @param subtitulo the subtitulo to set
+	 */
+	public void setSubtitulo(JLabel subtitulo) {
+		this.subtitulo = subtitulo;
 	}
-
 	/**
 	 * @return the fondo_grid
 	 */
 	public JLabel getFondo_grid() {
 		return fondo_grid;
 	}
-
-	/**
-	 * @return the eliminar
-	 */
-	public JButton getEliminar() {
-		return eliminar;
-	}
-
-	/**
-	 * @param eliminar the eliminar to set
-	 */
-	public void setEliminar(JButton eliminar) {
-		this.eliminar = eliminar;
-	}
-
 	/**
 	 * @param fondo_grid the fondo_grid to set
 	 */
 	public void setFondo_grid(JLabel fondo_grid) {
 		this.fondo_grid = fondo_grid;
 	}
-
+	/**
+	 * @return the b_atras
+	 */
+	public JButton getB_atras() {
+		return b_atras;
+	}
+	/**
+	 * @param b_atras the b_atras to set
+	 */
+	public void setB_atras(JButton b_atras) {
+		this.b_atras = b_atras;
+	}
+	/**
+	 * @return the b_atras_caja
+	 */
+	public JButton getB_atras_caja() {
+		return b_atras_caja;
+	}
+	/**
+	 * @param b_atras_caja the b_atras_caja to set
+	 */
+	public void setB_atras_caja(JButton b_atras_caja) {
+		this.b_atras_caja = b_atras_caja;
+	}
+	/**
+	 * @return the b_siguiente_caja
+	 */
+	public JButton getB_siguiente_caja() {
+		return b_siguiente_caja;
+	}
+	/**
+	 * @param b_siguiente_caja the b_siguiente_caja to set
+	 */
+	public void setB_siguiente_caja(JButton b_siguiente_caja) {
+		this.b_siguiente_caja = b_siguiente_caja;
+	}
+	/**
+	 * @return the eliminar
+	 */
+	public JButton getEliminar() {
+		return eliminar;
+	}
+	/**
+	 * @param eliminar the eliminar to set
+	 */
+	public void setEliminar(JButton eliminar) {
+		this.eliminar = eliminar;
+	}
+	/**
+	 * @return the iniciales
+	 */
+	public Iniciales getIniciales() {
+		return iniciales;
+	}
+	/**
+	 * @param iniciales the iniciales to set
+	 */
+	public void setIniciales(Iniciales iniciales) {
+		this.iniciales = iniciales;
+	}
 	/**
 	 * @return the caja
 	 */
 	public Botonera getCaja() {
 		return caja;
 	}
-
 	/**
 	 * @param caja the caja to set
 	 */
@@ -184,42 +250,6 @@ public class Pokemones_panel extends JPanel {
 		this.caja = caja;
 	}
 
-	public JLabel getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(JLabel titulo) {
-		this.titulo = titulo;
-	}
-
-	/**
-	 * @return the iniciales
-	 */
-	public Iniciales getIniciales() {
-		return iniciales;
-	}
-
-	/**
-	 * @param iniciales the iniciales to set
-	 */
-	public void setIniciales(Iniciales iniciales) {
-		this.iniciales = iniciales;
-	}
-
-	public JButton getB_atras() {
-		return b_atras;
-	}
-
-	public JLabel getSubtitulo() {
-		return subtitulo;
-	}
-
-	public void setSubtitulo(JLabel subtitulo) {
-		this.subtitulo = subtitulo;
-	}
-
-	public void setB_atras(JButton b_atras) {
-		this.b_atras = b_atras;
-	}
+	
 
 }

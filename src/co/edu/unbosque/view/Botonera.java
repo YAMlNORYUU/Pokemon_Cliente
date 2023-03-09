@@ -5,20 +5,54 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+/**
+ * 
+ * @author KEVIN
+ * @author NICOLAS
+ * @author JOSE
+ * 
+ * JPanel encargado de que se genere el arrayList de botones
+ *
+ */
 public class Botonera extends JPanel {
-	JPanel caja1;
-	JPanel caja2;
-	JPanel caja3;
+	
+		/**
+	 *  Stributo de tipo long estatico
+	 */
+	private static final long serialVersionUID = 1L;
+		/**
+		 * Panel que muestra la primera caja de pokemones
+		 */
+		JPanel caja1;
+		/**
+		 * Panel que muestra la segunda caja de pokemones
+		 */
+		JPanel caja2;
+		/**
+		 * Panel que muestra la tercaera caja de pokemones
+		 */
+		JPanel caja3;
 
-
-	ArrayList<JButton> caja1poke;
-	ArrayList<JButton> caja2poke;
-	ArrayList<JButton> caja3poke;
+		/**
+		 * Atributo de tipo ArrayList que guarda los pokemones de la caja 1
+		 */
+		ArrayList<JButton> caja1poke;
+		/**
+		 * Atributo de tipo ArrayList que guarda los pokemones de la caja 2
+		 */
+		ArrayList<JButton> caja2poke;
+		/**
+		 * Atributo de tipo ArrayList que guarda los pokemones de la caja 3
+		 */
+		ArrayList<JButton> caja3poke;
+		
+	  int aux1;
 
 	
-
-	int aux1;
-
+	/**
+	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * <b>post</b> se instancian los atributos <br>
+	 */
 	public Botonera() {
 
 		// Creamos la matriz de botones
@@ -281,6 +315,6 @@ public class Botonera extends JPanel {
 		this.caja3poke = caja3poke;
 	}
 
+	}
 
 
-}

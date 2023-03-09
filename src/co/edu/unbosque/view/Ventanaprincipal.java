@@ -16,20 +16,38 @@ import javax.swing.JPanel;
 
 
 /**
- * Panel destinado a que el usuario escoja que funcion va a usar por medio de la ventana, donde creamos 
- * botosnes, ventanas, paneles y demas cosas necesarias, aqui realizamos el diseño del pane principal 
- * añadiendo sus  respectivos botones, imagenes, etc.
- *
+ * Ventana principal de la interfaz grafica
+ * 
  * @author Kevin
- * @author Gabriel
+ * @author Nicolas
+ * @author jose
  */
 public class Ventanaprincipal extends JFrame {
 
+	/**
+	 * Atributo tipo JButton el cual indica al usuario que entro al programa
+	 */
 	JButton b_ingresar;
+	/**
+	 * Atributo tipo JButton el cual indica al usuario que salio al programa
+	 */
 	JButton b_salir;
+	/**
+	 * Panel que muestra el menu
+	 */
 	JPanel menu;
+	/**
+	 * Atributo tipo JLabel imagenes gif para ambientar 
+	 */
 	JLabel fondo_menu, lugia, ho_oh;
+	/**
+	 * Panel que muestra las cajas de pokemones
+	 */
 	Pokemones_panel panel_pokemones;
+	
+	/**
+	 * Panel que muestra la informacion de los pokemones
+	 */
 	InfoPokemon info_pokemon;
 
 	/**
@@ -101,72 +119,115 @@ public class Ventanaprincipal extends JFrame {
 	}
 
 	/**
-	 * @param b_guardar,b_eliminar,b_listar,b_salir
-	 * @return b_guardar,b_eliminar,b_listar,b_salir
+	 * @return the b_ingresar
 	 */
-
-	public Pokemones_panel getPanel_pokemones() {
-		return panel_pokemones;
-	}
-
-	public void setPanel_pokemones(Pokemones_panel panel_pokemones) {
-		this.panel_pokemones = panel_pokemones;
-	}
-
-	public JLabel getFondo_menu() {
-		return fondo_menu;
-	}
-
-	public void setFondo_menu(JLabel fondo_menu) {
-		this.fondo_menu = fondo_menu;
-	}
-
 	public JButton getB_ingresar() {
 		return b_ingresar;
 	}
 
+	/**
+	 * @param b_ingresar the b_ingresar to set
+	 */
 	public void setB_ingresar(JButton b_ingresar) {
 		this.b_ingresar = b_ingresar;
 	}
 
-	public JLabel getLugia() {
-		return lugia;
-	}
-
-	public void setLugia(JLabel lugia) {
-		this.lugia = lugia;
-	}
-
-	public JLabel getHo_oh() {
-		return ho_oh;
-	}
-
-	public void setHo_oh(JLabel ho_oh) {
-		this.ho_oh = ho_oh;
-	}
-
-	public InfoPokemon getInfo_pokemon() {
-		return info_pokemon;
-	}
-
-	public void setInfo_pokemon(InfoPokemon info_pokemon) {
-		this.info_pokemon = info_pokemon;
-	}
-
-	public JPanel getMenu() {
-		return menu;
-	}
-
-	public void setMenu(JPanel menu) {
-		this.menu = menu;
-	}
-
+	/**
+	 * @return the b_salir
+	 */
 	public JButton getB_salir() {
 		return b_salir;
 	}
 
+	/**
+	 * @param b_salir the b_salir to set
+	 */
 	public void setB_salir(JButton b_salir) {
 		this.b_salir = b_salir;
+	}
+
+	/**
+	 * @return the menu
+	 */
+	public JPanel getMenu() {
+		return menu;
+	}
+
+	/**
+	 * @param menu the menu to set
+	 */
+	public void setMenu(JPanel menu) {
+		this.menu = menu;
+	}
+
+	/**
+	 * @return the fondo_menu
+	 */
+	public JLabel getFondo_menu() {
+		return fondo_menu;
+	}
+
+	/**
+	 * @param fondo_menu the fondo_menu to set
+	 */
+	public void setFondo_menu(JLabel fondo_menu) {
+		this.fondo_menu = fondo_menu;
+	}
+
+	/**
+	 * @return the lugia
+	 */
+	public JLabel getLugia() {
+		return lugia;
+	}
+
+	/**
+	 * @param lugia the lugia to set
+	 */
+	public void setLugia(JLabel lugia) {
+		this.lugia = lugia;
+	}
+
+	/**
+	 * @return the ho_oh
+	 */
+	public JLabel getHo_oh() {
+		return ho_oh;
+	}
+
+	/**
+	 * @param ho_oh the ho_oh to set
+	 */
+	public void setHo_oh(JLabel ho_oh) {
+		this.ho_oh = ho_oh;
+	}
+
+	/**
+	 * @return the panel_pokemones
+	 */
+	public Pokemones_panel getPanel_pokemones() {
+		return panel_pokemones;
+	}
+
+	/**
+	 * @param panel_pokemones the panel_pokemones to set
+	 */
+	public void setPanel_pokemones(Pokemones_panel panel_pokemones) {
+		this.panel_pokemones = panel_pokemones;
+	}
+
+	/**
+	 * @return the info_pokemon
+	 */
+	public InfoPokemon getInfo_pokemon() {
+		return info_pokemon;
+	}
+
+	/**
+	 * @param info_pokemon the info_pokemon to set
+	 */
+	public void setInfo_pokemon(InfoPokemon info_pokemon) {
+		this.info_pokemon = info_pokemon;
 	}
 
 }

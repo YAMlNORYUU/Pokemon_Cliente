@@ -13,6 +13,8 @@ import java.util.ArrayList;
  * Claase de archivo de tipo .dat para los candidatos
 
  * @author Nicolas Machado
+ * @author Nicolas Machado
+ * @author Nicolas Machado
 
  */
 public class Archivo {
