@@ -39,6 +39,7 @@ public class PokemonDAO {
 	private Archivo archivo;
 
 	/**
+	 * @param archivo Archivo
 	 * Metodo constructor <b>pre</b> Archivo archivo <br>
 	 * <b>post</b> se instancian los atributos <br>
 	 */
@@ -70,7 +71,7 @@ public class PokemonDAO {
 	 * @param mote             La mote a agregar
 	 * @param movimientos      La movimientos a agregar
 	 * @param nivel            La nivel a agregar
-	 * @return Un valor de verdad que indica si el pokemon fue agregado
+	 *@throws Exception excepcion para que no se detenga el programa
 	 *
 	 */
 	public void guardar(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
@@ -108,7 +109,7 @@ public class PokemonDAO {
 	 * @param mote             La mote a agregar
 	 * @param movimientos      La movimientos a agregar
 	 * @param nivel            La nivel a agregar
-	 * @return Un valor de verdad que indica si el pokemon fue agregado
+	 * 
 	 *
 	 */
 
@@ -127,7 +128,7 @@ public class PokemonDAO {
 	 * estar vacia <br>
 	 * <b> post </b> El pokemon es encontrado <br>
 	 * 
-	 * @param nombre la edad que se busca
+	 * @param nombre el nombre que se busca
 	 * @param lista  La lista a buscar
 	 * @return La informacion del pokemon encontrado
 	 */
@@ -146,7 +147,16 @@ public class PokemonDAO {
 		}
 		return encontrado;
 	}
-
+	/**
+	 * Metodo para buscar un pokemon por el nombre <b> pre </b> La lista no debe
+	 * estar vacia <br>
+	 * <b> post </b> El pokemon es encontrado <br>
+	 * 
+	 * @param aux el aux que se busca
+	 * @param aux1 el aux1 que se busca
+	 * @param xd maximo
+	 * @return La informacion del pokemon encontrado
+	 */
 	public int buscar(String aux, String aux1, int xd) {
 		int aux12 = 0;
 		for (int i = 0; i < xd; i++) {
@@ -182,6 +192,16 @@ public class PokemonDAO {
 		return aux12;
 
 	}
+	
+	/**
+	 * Metodo para eliminar por la nombre <b> pre </b> La existencia del pokemon
+	 * <br>
+	 * <b> post </b> El pokemon es eliminado <br>
+	 * 
+	 * @param nombre El nombre por el que se va a buscar
+	 * @param lista  La lista de donde se va a eliminar el pokemon
+	 * @return Un valor de verdad que indica si la posicion fue eliminado
+	 */
 	public boolean eliminarPos(String nombre, ArrayList<PokemonDTO> lista) {
 
 		try {
@@ -282,10 +302,17 @@ public class PokemonDAO {
 		this.caja3 = caja3;
 	}
 
+	
+	/**
+	 * @return the lista
+	 */
 	public ArrayList<PokemonDTO> getLista() {
 		return lista;
 	}
 
+	/**
+	 * @param lista the lista to set
+	 */
 	public void setLista(ArrayList<PokemonDTO> lista) {
 		this.lista = lista;
 	}

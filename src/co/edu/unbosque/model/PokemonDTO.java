@@ -74,6 +74,20 @@ public class PokemonDTO implements Serializable {
 	}
 
 	/**
+	 * @param id               El id a agregar
+	 * @param nombre           El nombre a agregar
+	 * @param id_general       la id_general a agregar
+	 * @param tipo             El tipo a agregar
+	 * @param ps               La ps a agregar
+	 * @param ataque           La ataque a agregar
+	 * @param defensa          La defensa a agregar
+	 * @param ataque_especial  La ataque_especial a agregar
+	 * @param defensa_especial La defensa_especial a agregar
+	 * @param velocidad        La velocidad a agregar
+	 * @param mote             La mote a agregar
+	 * @param movimientos      La movimientos a agregar
+	 * @param nivel            La nivel a agregar
+	 * 
 	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
 	 * <b>post</b> se instancian los atributos <br>
 	 */
@@ -105,7 +119,11 @@ public class PokemonDTO implements Serializable {
 				+ ", defensa_especial=" + defensa_especial + ", velocidad=" + velocidad + ", mote=" + mote
 				+ ", movimientos=" + movimientos + ", nivel=" + nivel + "]";
 	}
-	
+	/**
+	 * Metodo para mostrar informacion de los pokemones 
+	 * @return 
+	 * 
+	 */
 	public String info() {
 		return  id +"\n"+ " nombre=" + nombre + "\n"+ " id_general=" + id_general +"\n"+ " tipo=" + tipo +"\n"+ " ps="
 				+ ps +"\n"+ " ataque=" + ataque +"\n"+ " defensa=" + defensa +"\n"+ " ataque_especial=" + ataque_especial

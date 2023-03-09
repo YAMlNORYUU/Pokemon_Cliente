@@ -38,7 +38,6 @@ public class Archivo {
      * Metodo constructor
      * <b>pre</b> La existencia del archivo <br>
      * <b>post</b> Archivo inicilizado y/o creado<br>
-     * @throws IOException 
      */
     public Archivo(){
         if (archivo.exists()) {

@@ -17,6 +17,7 @@ public class JPane extends javax.swing.JOptionPane {
 	/**
 	 * Metodo que se encarga de mostar el icono por medio de un JOptionPane
 	 * @param mensaje Mensaje que contiene la informacion del dato solicitado
+	 *  @param icono icono del pokemon
 	 * @return Mensaje por medio del JOptionPane
 	 */
 	public int mostrarInformacionIcono(String mensaje,ImageIcon icono) {
@@ -32,7 +33,8 @@ public class JPane extends javax.swing.JOptionPane {
 	/**
 	 * Metodo que se encarga de mostar el mensaje ingresado y el icono por medio de un JOptionPane
 	 * @param mensaje Mensaje que contiene la informacion del dato solicitado
-	 * @return Mensaje por medio del JOptionPane
+	 * @param icono icono del pokemon
+	 * 
 	 */
 	public void mostrarInfoIco(String mensaje,ImageIcon icono) {
 
@@ -53,7 +55,7 @@ public class JPane extends javax.swing.JOptionPane {
 	/**
 	 * Metodo que se encarga de mostrar el mensaje ingresado por medio de un JOptionPane
 	 * @param mensaje Mensaje que contiene la informacion del dato solicitado
-	 * @return Mensaje por medio del JOptionPane
+	 * 
 	 */
 	public void mostrarInformacion(String mensaje) {
 		JPane.showMessageDialog(null, mensaje, "Ventana de Informacion", JPane.INFORMATION_MESSAGE);
@@ -63,7 +65,7 @@ public class JPane extends javax.swing.JOptionPane {
 	/**
 	 * Metodo que se encarga de mostrar el mensaje ingresado por medio de un JOptionPane
 	 * @param mensaje Mensaje que contiene la informacion del dato solicitado
-	 * @return Mensaje por medio del JOptionPane
+	 *
 	 */
 	public void mostrarError(String mensaje) {
 		JPane.showMessageDialog(null, mensaje, "Ventana de Error", JPane.ERROR_MESSAGE);

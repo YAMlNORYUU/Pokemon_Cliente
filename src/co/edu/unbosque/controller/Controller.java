@@ -135,6 +135,9 @@ public class Controller implements ActionListener {
 
 	/**
 	 * cagar la base de datos kevin
+	 * 
+	 * @throws UnknownHostException Excepcionque hace que no pare el programa
+	 * @throws IOException          Excepcion que hace que no pare el programa
 	 */
 
 	public void cargarBase() throws UnknownHostException, IOException {
@@ -142,11 +145,7 @@ public class Controller implements ActionListener {
 		for (int i = 0; i < 100; i++) {
 
 			Socket socket = new Socket("127.0.0.1", local);
-			/*
-			 * Cria um novo objeto Cliente com a conexão socket para que seja executado em
-			 * um novo processo. Permitindo assim a conexão de vário clientes com o
-			 * servidor.
-			 */
+	
 			Cliente c = new Cliente(2, socket, dao.getLista(), dao, aux11);
 
 			c.run();
@@ -155,9 +154,12 @@ public class Controller implements ActionListener {
 		}
 
 	}
+
 	/**
 	 * iniciar, activar la visibilidad de las cajas y llama a los metodos cargarBase
 	 * y repartirCajas kevin
+	 * @throws UnknownHostException Excepcionque hace que no pare el programa
+	 * @throws IOException          Excepcion que hace que no pare el programa
 	 */
 	public void iniciar() throws UnknownHostException, IOException {
 		vp.getV_principal().setVisible(true);
@@ -166,6 +168,7 @@ public class Controller implements ActionListener {
 		repartirCajas();
 
 	}
+
 	/**
 	 * repartir cajas divide la base de datos lo pokemones en las diferentes cajas
 	 * kevin
@@ -196,6 +199,7 @@ public class Controller implements ActionListener {
 		}
 
 	}
+
 	/**
 	 * Metodo encargado de accionar los comandos
 	 */

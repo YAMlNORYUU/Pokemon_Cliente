@@ -43,9 +43,17 @@ public class Cliente implements Runnable {
 
 
 	/**
-	 * Metodo Constructor
+	 * Metodo para modificar el mote de un pokemon por la busqueda del mismo <b> pre
+	 * </b> La existencia del pokemon <br>
+	 * <b> post </b> El mote es modificado <br>
+	 * 
+	 * @param operacao El entero que va a diferenciar las operaciones
+	 * @param cliente  El socket que se va a usar
+	 * @param lista  La lista de donde se va a usar
+	 * @param dao Atributo renombrado de  PokemonDAO
+	 * @param selec el entero que reescribe
+	 * 
 	 */
-
 	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao, int selec) {
 		super();
 		this.operacao = operacao;
