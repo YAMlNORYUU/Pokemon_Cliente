@@ -232,12 +232,14 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						for (int i = 0; i < dao.getCaja1().size(); i++) {
-							
-						}
+					
 						
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().remove(j);
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().remove(j);
+//						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().remove(j);
+//						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().remove(j);
+						
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(j).setIcon(icono12);
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
@@ -285,8 +287,9 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().remove(j);
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().remove(j);
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(j).setIcon(icono12);
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
@@ -333,15 +336,20 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().remove(j);
 						
-//						dao.buscar(dao.getCaja3().get(j).getNombre(), vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).getText(), vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().size());
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().remove(j);
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).setIcon(icono12);
+						
+						
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
 					} else if (aux == 1) {
-					
+						
+						
+						
+						
 						
 					}
 				}
@@ -386,7 +394,12 @@ if (aux1==0) {
 	
 			vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(dao.getCaja1().size()-1).setIcon(icono12);
 			
-			dao.eliminar(dao.getCaja1().get(dao.getCaja1().size()-1).getNombre(), dao.getLista());
+		for (int i = 0; i < dao.getLista().size(); i++) {
+//			
+//			vp.getV_principal().getPanel_pokemones()
+			
+			
+		}
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 			System.out.println(aux11);
 	
@@ -472,6 +485,7 @@ if (aux1==0) {
         
 
         }
+		
 if (comando.equals("siguiente_caja")) {
             if (vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().isVisible()) {
                 vp.getV_principal().getPanel_pokemones().getB_atras_caja().setEnabled(true);
@@ -515,14 +529,29 @@ if (comando.equals("siguiente_caja")) {
 			
 			switch (aux4) {
 			case 1:
-				dao.eliminar(aux12, dao.getCaja1());
+			int a11 = dao.eliminar(aux1, dao.getCaja1());
+		
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(a11).setText("");
+				ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(a11).setIcon(icono12);
 				break;
 	case 2:
-		dao.eliminar(aux12, dao.getCaja2());
+		int a12 = dao.eliminar(aux1, dao.getCaja2());
+		
+		
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(a12).setText("");
+		ImageIcon icono122 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(a12).setIcon(icono122);
 				break;
 
 	case 3:
-		dao.eliminar(aux12, dao.getCaja2());
+		int a13 = dao.eliminar(aux1, dao.getCaja3());
+		
+		
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(a13).setText("");
+		ImageIcon icono121 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(a13).setIcon(icono121);
 		break;
 
 

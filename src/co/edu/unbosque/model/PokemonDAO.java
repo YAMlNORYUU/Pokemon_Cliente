@@ -98,22 +98,18 @@ public class PokemonDAO {
 			return aux12;
 			
 		}
-		public boolean eliminar(String nombre, ArrayList<PokemonDTO> lista) {
+		public int eliminar(String nombre, ArrayList<PokemonDTO> lista) {
 
-			try {
+			int aux12 = 0;
+			for (int i = 0; i < lista.size(); i++) {
 				
-		
-				PokemonDTO bus = buscarNombre(nombre, lista);
-				lista.remove(bus);
-		
-
-				return true;
-
-			} catch (Exception e2) {
-				e2.printStackTrace();
-				return false;
+				
+				if (nombre.equals(lista.get(i).getNombre())) {
+					return i;
+					
+				}
 			}
-			
+			return aux12;
 		
 		}
 		public boolean eliminarPos(String nombre, ArrayList<PokemonDTO> lista) {
