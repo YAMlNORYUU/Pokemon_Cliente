@@ -28,8 +28,8 @@ public class Iniciales extends JPanel {
 
 		for (int i = 0; i < 6; i++) {
 			JButton caja1pokrr = new JButton();
-			caja1pokrr.setText("                                                   ");
-
+			caja1pokrr.setText("                ");
+//			caja1pokrr.setText("bolsillo"+(i + 1));
 
 			caja1pokrr.setActionCommand("bolsillo"+(i + 1));
 			

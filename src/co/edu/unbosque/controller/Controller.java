@@ -172,66 +172,7 @@ public class Controller implements ActionListener{
 
 	}
 
-	//	
-	//	public void iniciar() throws UnknownHostException, IOException {
-	//		
-	//		
-	//	cargarBase();
-	//		
-	//
-	//		while (true) {
-	//			try {
-	//				
-	//		
-	//	
-	//		operacao = Integer.parseInt(
-	//				JOptionPane.showInputDialog("(1).Agregar 6 pokemones" + "\n" + "(2).Agrega un pokemon" +"\n" +"(3).coinar un pokemon" +"\n" +"(4).Mandar a la pc"));
-	//		
-	//		
-	//	switch (operacao) {
-	//	case 1:
-	//	
-	//		for (int i = 0; i < 6; i++) {
-	//
-	//			Socket socket = new Socket("127.0.0.1", local);
-	//			/*
-	//			 * Cria um novo objeto Cliente com a conexão socket para que seja executado em
-	//			 * um novo processo. Permitindo assim a conexão de vário clientes com o
-	//			 * servidor.
-	//			 */
-	//			Cliente c = new Cliente(operacao, socket, dao.getLista(), dao,aux11);
-	//
-	//			c.run();
-	//
-	//
-	//		}
-	//		System.out.println(dao.mostrarpokemones());
-	//		break;
-	//	case 2:
-	//		
-	//		Socket socket = new Socket("127.0.0.1", local);
-	//		/*
-	//		 * Cria um novo objeto Cliente com a conexão socket para que seja executado em
-	//		 * um novo processo. Permitindo assim a conexão de vário clientes com o
-	//		 * servidor.
-	//		 */
-	//		Cliente c = new Cliente(operacao, socket, dao.getLista(), dao,aux11);
-	//
-	//		c.run();
-	//		
-	//		break;
-	//
-	//	default:
-	//		break;
-	//	}
-	//			} catch (Exception e) {
-	//				// TODO: handle exception
-	//			}	
-	//		
-	//	}
-	//	}
-	//	
-	//	
+		
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -253,6 +194,12 @@ if (aux1==0) {
 }else {
 	vp.getV_principal().getPanel_pokemones().setVisible(true);
 	vp.getV_principal().getMenu().setVisible(false);
+	
+	for (int i = 0; i < vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().size(); i++) {
+		
+		ImageIcon icono = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(i).setIcon(icono);
+	}
 }
 
 		}
@@ -285,12 +232,14 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						for (int i = 0; i < dao.getCaja1().size(); i++) {
-							
-						}
+					
 						
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().remove(j);
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().remove(j);
+//						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().remove(j);
+//						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().remove(j);
+						
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(j).setIcon(icono12);
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
@@ -338,8 +287,9 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2().remove(j);
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().remove(j);
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(j).setIcon(icono12);
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
@@ -386,13 +336,20 @@ if (aux1==0) {
 						vp.getV_principal().getPanel_pokemones().getIniciales().getInicial().get(dao.getLista().size()-1).setIcon(icono1);
 
 					
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3().remove(j);
-						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().remove(j);
+						
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).setText("");
+						ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+						vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(j).setIcon(icono12);
+						
+						
 						
 						vp.getV_principal().getPanel_pokemones().getCaja().repaint();
 						vp.getJp().mostrarInformacion("Agregado al bolsillo");
 					} else if (aux == 1) {
-					
+						
+						
+						
+						
 						
 					}
 				}
@@ -421,8 +378,8 @@ if (aux1==0) {
 				if (aux == 0) {
 					
 			String aux1 = vp.getJp().tomarDato("En que caja quiere meterlo");
-			int aux11 = Integer.parseInt(aux1);
 			try {
+			int aux11 = Integer.parseInt(aux1);
 				
 		
 		if (aux11 == 1) {
@@ -433,13 +390,19 @@ if (aux1==0) {
 			vp.getV_principal().getPanel_pokemones().getCaja().agregar(1);
 			
 			vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(dao.getCaja1().size()-1).setText(dao.getCaja1().get(dao.getCaja1().size()-1).getNombre());
-			ImageIcon icono12 = new ImageIcon("2 GEN/" + (dao.getCaja1().get(dao.getCaja1().size()-1).getId() ) + ".png");
+			ImageIcon icono121 = new ImageIcon("2 GEN/" + (dao.getCaja1().get(dao.getCaja1().size()-1).getId() ) + ".png");
 	
-			vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(dao.getCaja1().size()-1).setIcon(icono12);
+			vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(dao.getCaja1().size()-1).setIcon(icono121);
 			
-			dao.eliminar(dao.getCaja1().get(dao.getCaja1().size()-1).getNombre(), dao.getLista());
+		for (int i = 0; i < dao.getLista().size(); i++) {
+//			
+//			vp.getV_principal().getPanel_pokemones()
+			
+			
+		}
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
-			asignarOyentes();
+			System.out.println(aux11);
+	
 			
 			
 		}else if (aux11 == 2) {
@@ -456,7 +419,7 @@ if (aux1==0) {
 			
 			dao.eliminar(dao.getCaja2().get(dao.getCaja2().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
-			asignarOyentes();
+		
 		
 		}else if (aux11 == 3) {
 			
@@ -467,13 +430,13 @@ if (aux1==0) {
 			vp.getV_principal().getPanel_pokemones().getCaja().agregar(3);
 			
 			vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(dao.getCaja3().size()-1).setText(dao.getCaja3().get(dao.getCaja3().size()-1).getNombre());
-			ImageIcon icono12 = new ImageIcon( + (dao.getCaja3().get(dao.getCaja3().size()-1).getId() ) + ".png");
+			ImageIcon icono122 = new ImageIcon("2 GEN/" + (dao.getCaja3().get(dao.getCaja3().size()-1).getId() ) + ".png");
 	
-			vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(dao.getCaja3().size()-1).setIcon(icono12);
+			vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(dao.getCaja3().size()-1).setIcon(icono122);
 			
 			dao.eliminar(dao.getCaja3().get(dao.getCaja3().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
-			asignarOyentes();
+			
 			
 		}
 			} catch (Exception e2) {
@@ -522,6 +485,7 @@ if (aux1==0) {
         
 
         }
+		
 if (comando.equals("siguiente_caja")) {
             if (vp.getV_principal().getPanel_pokemones().getCaja().getCaja1().isVisible()) {
                 vp.getV_principal().getPanel_pokemones().getB_atras_caja().setEnabled(true);
@@ -565,14 +529,29 @@ if (comando.equals("siguiente_caja")) {
 			
 			switch (aux4) {
 			case 1:
-				dao.eliminar(aux12, dao.getCaja1());
+			int a11 = dao.eliminar(aux1, dao.getCaja1());
+		
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(a11).setText("");
+				ImageIcon icono12 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(a11).setIcon(icono12);
 				break;
 	case 2:
-		dao.eliminar(aux12, dao.getCaja2());
+		int a12 = dao.eliminar(aux1, dao.getCaja2());
+		
+		
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(a12).setText("");
+		ImageIcon icono122 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(a12).setIcon(icono122);
 				break;
 
 	case 3:
-		dao.eliminar(aux12, dao.getCaja2());
+		int a13 = dao.eliminar(aux1, dao.getCaja3());
+		
+		
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(a13).setText("");
+		ImageIcon icono121 = new ImageIcon("2 GEN/" + (0 ) + ".png");
+		vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(a13).setIcon(icono121);
 		break;
 
 
