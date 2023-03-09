@@ -436,6 +436,7 @@ if (aux1==0) {
 			
 			dao.eliminar(dao.getCaja3().get(dao.getCaja3().size()-1).getNombre(), dao.getLista());
 			vp.getV_principal().getPanel_pokemones().getCaja().repaint();
+		
 			
 			
 		}
