@@ -12,17 +12,39 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-
+/**
+ * Clase cliente del proyecto.
+ * 
+ * @author Jose
+ * @author Kevin
+ * @author Nicolás
+ */
 public class Cliente implements Runnable {
-
+	/**
+	 * Atributo tipo int operacao para diferenciar los procesos
+	 */
 	private int operacao = 0;
+	/**
+	 * Atributo tipo Socket cliente 
+	 */
 	private Socket cliente;
-
+	/**
+	 * Atributo de tipo ArrayList que guarda los pokemones del usuario
+	 */
 	private ArrayList<PokemonDTO> lista;
+	/**
+	 * Atributo tipo PokemonDAO renombrado como dao
+	 */
 	private PokemonDAO dao;
+	/**
+	 * Atributo tipo int renombrado como selec
+	 */
 	private int selec;
 
 
+	/**
+	 * Metodo Constructor
+	 */
 
 	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao, int selec) {
 		super();
@@ -33,7 +55,9 @@ public class Cliente implements Runnable {
 		this.selec = selec;
 	}
 
-
+	/**
+	 * metodo run para iniciar los procesos
+	 */
 
 	public void run() {
 		try {
