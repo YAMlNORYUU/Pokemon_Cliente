@@ -12,6 +12,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+
 /**
  * Clase cliente del proyecto.
  * 
@@ -25,7 +26,7 @@ public class Cliente implements Runnable {
 	 */
 	private int operacao = 0;
 	/**
-	 * Atributo tipo Socket cliente 
+	 * Atributo tipo Socket cliente
 	 */
 	private Socket cliente;
 	/**
@@ -41,17 +42,15 @@ public class Cliente implements Runnable {
 	 */
 	private int selec;
 
-
 	/**
-	 * Metodo para modificar el mote de un pokemon por la busqueda del mismo <b> pre
-	 * </b> La existencia del pokemon <br>
-	 * <b> post </b> El mote es modificado <br>
+	 * Metodo constructor <b>pre</b> operacao,cliente,lista,dao,selec <br>
+	 * <b>post</b> se instancian los atributos <br>
 	 * 
 	 * @param operacao El entero que va a diferenciar las operaciones
 	 * @param cliente  El socket que se va a usar
-	 * @param lista  La lista de donde se va a usar
-	 * @param dao Atributo renombrado de  PokemonDAO
-	 * @param selec el entero que reescribe
+	 * @param lista    La lista de donde se va a usar
+	 * @param dao      Atributo renombrado de PokemonDAO
+	 * @param selec    el entero que reescribe
 	 * 
 	 */
 	public Cliente(int operacao, Socket cliente, ArrayList<PokemonDTO> lista, PokemonDAO dao, int selec) {
@@ -74,23 +73,18 @@ public class Cliente implements Runnable {
 			ObjectInputStream resultado = new ObjectInputStream(cliente.getInputStream());
 			ObjectOutputStream dados = new ObjectOutputStream(cliente.getOutputStream());
 			if (operacao == 1) {
-	
-				
-			dados.writeInt(operacao);
 
-			dados.flush();
-			
-			}else if (operacao == 2) {
-				
+				dados.writeInt(operacao);
+
+				dados.flush();
+
+			} else if (operacao == 2) {
+
 				dados.writeInt(operacao);
 				dados.writeInt(selec);
 				dados.flush();
-				
-			}
 
-			
-			
-			
+			}
 
 			int id = resultado.readInt();
 			String nombre = resultado.readUTF();
@@ -105,27 +99,26 @@ public class Cliente implements Runnable {
 			String mote = resultado.readUTF();
 			String movimientos = resultado.readUTF();
 			int nivel = resultado.readInt();
-			
-			
+
 			if (operacao == 1) {
-				
-			dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad,
-					mote, movimientos, nivel);
-			
-			}else if (operacao == 2) {
-				
-				dao.guardarPc(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad, mote, movimientos, nivel);
-				
+
+				dao.guardar(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial,
+						velocidad, mote, movimientos, nivel);
+
+			} else if (operacao == 2) {
+
+				dao.guardarPc(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial,
+						velocidad, mote, movimientos, nivel);
+
 			}
-			
 
 			resultado.close();
 			dados.close();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 //        catch (ClassNotFoundException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

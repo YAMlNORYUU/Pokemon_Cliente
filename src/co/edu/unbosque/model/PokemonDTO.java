@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
 
 import java.io.Serializable;
+
 /**
  * 
  * @author KEVIN
@@ -10,7 +11,7 @@ import java.io.Serializable;
  *         Clase encargada de instanciar los Atributos del pokemon
  */
 public class PokemonDTO implements Serializable {
-	
+
 	private static final long serialVersionUID = -2547628952586701287L;
 	/**
 	 * Atributo de tipo int se encarga de guardar el id del pokemon
@@ -66,8 +67,7 @@ public class PokemonDTO implements Serializable {
 	private int nivel;
 
 	/**
-	 * Metodo constructor 
-	 * <b>post</b> se instancian los atributos <br>
+	 * Metodo constructor <b>post</b> se instancian los atributos <br>
 	 */
 	public PokemonDTO() {
 		// TODO Auto-generated constructor stub
@@ -76,22 +76,22 @@ public class PokemonDTO implements Serializable {
 	/**
 	 * @param id               El id a agregar
 	 * @param nombre           El nombre a agregar
-	 * @param id_general       la id_general a agregar
+	 * @param id_general       El id_general a agregar
 	 * @param tipo             El tipo a agregar
-	 * @param ps               La ps a agregar
-	 * @param ataque           La ataque a agregar
+	 * @param ps               El ps a agregar
+	 * @param ataque           El ataque a agregar
 	 * @param defensa          La defensa a agregar
-	 * @param ataque_especial  La ataque_especial a agregar
+	 * @param ataque_especial  El ataque_especial a agregar
 	 * @param defensa_especial La defensa_especial a agregar
 	 * @param velocidad        La velocidad a agregar
-	 * @param mote             La mote a agregar
-	 * @param movimientos      La movimientos a agregar
-	 * @param nivel            La nivel a agregar
+	 * @param mote             El mote a agregar
+	 * @param movimientos      Los movimientos a agregar
+	 * @param nivel            El nivel a agregar
 	 * 
-	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * Metodo constructor <b>pre</b> La existencia de los
+	 * atributos <br>
 	 * <b>post</b> se instancian los atributos <br>
 	 */
-
 
 	public PokemonDTO(int id, String nombre, int id_general, String tipo, String ps, String ataque, String defensa,
 			String ataque_especial, String defensa_especial, String velocidad, String mote, String movimientos,
@@ -119,16 +119,30 @@ public class PokemonDTO implements Serializable {
 				+ ", defensa_especial=" + defensa_especial + ", velocidad=" + velocidad + ", mote=" + mote
 				+ ", movimientos=" + movimientos + ", nivel=" + nivel + "]";
 	}
+
 	/**
-	 * Metodo para mostrar informacion de los pokemones 
-	 * @return 
+	 * Metodo para mostrar informacion de los pokemones
+	 * 
+	 * @return id  El id del pokemon
+	 * @return nombre El nombre del pokemon
+	 * @return id_general El id_general del pokemon
+	 * @return tipo El tipo del pokemon
+	 * @return ps El ps del pokemon
+	 * @return ataque El ataque del pokemon
+	 * @return defensa El defensa del pokemon
+	 * @return ataque_especial El ataque_especial del pokemon
+	 * @return defensa_especial La defensa_especial del pokemon
+	 * @return velocidad La velocidad del pokemon
+	 * @return mote El mote del pokemon
+	 * @return movimientos los movimientos del pokemon
+	 * @return nivel El nivel del pokemon
 	 * 
 	 */
 	public String info() {
-		return  id +"\n"+ " nombre=" + nombre + "\n"+ " id_general=" + id_general +"\n"+ " tipo=" + tipo +"\n"+ " ps="
-				+ ps +"\n"+ " ataque=" + ataque +"\n"+ " defensa=" + defensa +"\n"+ " ataque_especial=" + ataque_especial
-				+"\n"+ " defensa_especial=" + defensa_especial +"\n"+ " velocidad=" + velocidad +"\n"+ " mote=" + mote
-				+"\n"+ " movimientos=" + movimientos +"\n"+ " nivel=" + nivel ;
+		return id + "\n" + " nombre=" + nombre + "\n" + " id_general=" + id_general + "\n" + " tipo=" + tipo + "\n"
+				+ " ps=" + ps + "\n" + " ataque=" + ataque + "\n" + " defensa=" + defensa + "\n" + " ataque_especial="
+				+ ataque_especial + "\n" + " defensa_especial=" + defensa_especial + "\n" + " velocidad=" + velocidad
+				+ "\n" + " mote=" + mote + "\n" + " movimientos=" + movimientos + "\n" + " nivel=" + nivel;
 	}
 
 	/**
@@ -313,6 +327,4 @@ public class PokemonDTO implements Serializable {
 		this.nivel = nivel;
 	}
 
-	
-	}
-
+}

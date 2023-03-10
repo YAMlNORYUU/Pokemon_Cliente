@@ -171,7 +171,7 @@ public class PokemonDAO {
 	}
 	
 	/**
-	 * Metodo para eliminar por la nombre <b> pre </b> La existencia del pokemon
+	 * Metodo para eliminar por el nombre <b> pre </b> La existencia del pokemon
 	 * <br>
 	 * <b> post </b> El pokemon es eliminado <br>
 	 * 
@@ -194,7 +194,7 @@ public class PokemonDAO {
 	}
 	
 	/**
-	 * Metodo para eliminar por la nombre <b> pre </b> La existencia del pokemon
+	 * Metodo para eliminar por la posicion <b> pre </b> La existencia del pokemon
 	 * <br>
 	 * <b> post </b> El pokemon es eliminado <br>
 	 * 
