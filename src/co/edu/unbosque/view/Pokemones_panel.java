@@ -72,6 +72,7 @@ public class Pokemones_panel extends JPanel {
 		b_guardar.setActionCommand("Guardar");
 		b_guardar.setVisible(true);
 		
+		
 		eliminar = new JButton("Eliminar");
 		eliminar.setForeground(Color.white);
 		eliminar.setBackground(Color.decode("#C81F32"));
@@ -142,6 +143,7 @@ public class Pokemones_panel extends JPanel {
 				Image.SCALE_DEFAULT));
 		fondo_grid.setIcon(icono);
 
+		add(b_guardar);
 		add(fondo_grid);
 		add(eliminar);
 		add(subtitulo);
