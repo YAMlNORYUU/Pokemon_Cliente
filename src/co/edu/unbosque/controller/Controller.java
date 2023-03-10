@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.Archivo;
 import co.edu.unbosque.model.PokemonDAO;
+import co.edu.unbosque.model.PokemonDTO;
 import co.edu.unbosque.view.Ventana_general;
 
 /**
@@ -109,6 +110,7 @@ public class Controller implements ActionListener {
 		vp.getV_principal().getB_ingresar().addActionListener(this);
 		vp.getV_principal().getB_salir().addActionListener(this);
 		vp.getV_principal().getPanel_pokemones().getB_atras().addActionListener(this);
+		vp.getV_principal().getPanel_pokemones().getB_guardar().addActionListener(this);
 		vp.getV_principal().getPanel_pokemones().getB_atras_caja().addActionListener(this);
 		vp.getV_principal().getPanel_pokemones().getB_siguiente_caja().addActionListener(this);
 		vp.getV_principal().getInfo_pokemon().getB_atras().addActionListener(this);
@@ -501,6 +503,89 @@ public class Controller implements ActionListener {
 			} else if (op == 1) {
 
 			}
+		}
+		
+		if (comando.equals("Guardar")) {
+			
+			int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del Pokémon:"));
+			String nombre = JOptionPane.showInputDialog("Ingrese el nombre del Pokémon:");
+			int id_general = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID general del Pokémon:"));
+			String tipo = JOptionPane.showInputDialog("Ingrese el tipo del Pokémon:");
+			String ps = JOptionPane.showInputDialog("Ingrese los puntos de salud del Pokémon:");
+			String ataque = JOptionPane.showInputDialog("Ingrese la estadística de ataque del Pokémon:");
+			String defensa = JOptionPane.showInputDialog("Ingrese la estadística de defensa del Pokémon:");
+			String ataque_especial = JOptionPane.showInputDialog("Ingrese la estadística de ataque especial del Pokémon:");
+			String defensa_especial = JOptionPane.showInputDialog("Ingrese la estadística de defensa especial del Pokémon:");
+			String velocidad = JOptionPane.showInputDialog("Ingrese la estadística de velocidad del Pokémon:");
+			String mote = JOptionPane.showInputDialog("Ingrese el apodo del Pokémon:");
+			String movimientos = JOptionPane.showInputDialog("Ingrese los movimientos del Pokémon:");
+			int nivel = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nivel del Pokémon:"));
+	
+			
+			String aux1 = vp.getJp().tomarDato("En que caja quiere meterlo");
+		
+		
+			PokemonDTO aux111  = new PokemonDTO(id, nombre, id_general, tipo, ps, ataque, defensa, ataque_especial, defensa_especial, velocidad, mote, movimientos, nivel);
+				try {
+					
+				
+			int aux11 = Integer.parseInt(aux1);
+				switch (aux11) {
+				case 1:
+					
+					
+					dao.getCaja1().add(aux111);
+					vp.getV_principal().getPanel_pokemones().getCaja().agregar(1);
+					
+					vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke()
+					.get(dao.getCaja1().size() - 1)
+					.setText(dao.getCaja1().get(dao.getCaja1().size() - 1).getNombre());
+					
+					vp.getV_principal().getPanel_pokemones().getCaja().getCaja1poke().get(dao.getCaja1().size() - 1).addActionListener(this);
+					
+					
+					vp.getV_principal().getPanel_pokemones().getCaja().repaint();
+	
+					break;
+			case 2:
+				dao.getCaja2().add(aux111);
+				vp.getV_principal().getPanel_pokemones().getCaja().agregar(2);
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke()
+				.get(dao.getCaja2().size() - 1)
+				.setText(dao.getCaja2().get(dao.getCaja2().size() - 1).getNombre());
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja2poke().get(dao.getCaja2().size() - 1).addActionListener(this);
+				
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().repaint();
+					break;
+			case 3:
+				dao.getCaja3().add(aux111);
+				vp.getV_principal().getPanel_pokemones().getCaja().agregar(3);
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke()
+				.get(dao.getCaja3().size() - 1)
+				.setText(dao.getCaja3().get(dao.getCaja3().size() - 1).getNombre());
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().getCaja3poke().get(dao.getCaja3().size() - 1).addActionListener(this);
+				
+				
+				vp.getV_principal().getPanel_pokemones().getCaja().repaint();
+				break;
+	
+				default:
+					break;
+				}
+			
+			
+				} catch (Exception e2) {
+					vp.getJp().mostrarError("Digitaste algo mal");
+	
+				}
+			
+			
+			
 		}
 
 		if (comando.equals("Eliminar")) {

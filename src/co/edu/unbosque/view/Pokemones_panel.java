@@ -32,7 +32,7 @@ public class Pokemones_panel extends JPanel {
 	 * Atributo tipo JButton Que muestran los botones para regresar al menu, y pasar
 	 * a la siguiente pagina o volver a la anterior y eliminar
 	 */
-	private JButton b_atras, b_atras_caja, b_siguiente_caja, eliminar;
+	private JButton b_atras, b_atras_caja, b_siguiente_caja,b_guardar, eliminar;
 	/**
 	 * JPanel de informacion de pokemones principales del usuario
 	 */
@@ -62,6 +62,15 @@ public class Pokemones_panel extends JPanel {
 		b_atras.setVisible(true);
 
 
+		
+		b_guardar = new JButton("Guardar");
+		b_guardar.setForeground(Color.white);
+		b_guardar.setBackground(Color.decode("#C81F32"));
+		b_guardar.setFont(new Font("Arial", Font.BOLD, 10));
+		b_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		b_guardar.setBounds(800, 600, 150, 50);
+		b_guardar.setActionCommand("Guardar");
+		b_guardar.setVisible(true);
 		
 		eliminar = new JButton("Eliminar");
 		eliminar.setForeground(Color.white);
@@ -248,6 +257,18 @@ public class Pokemones_panel extends JPanel {
 	 */
 	public void setCaja(Botonera caja) {
 		this.caja = caja;
+	}
+	/**
+	 * @return the b_guardar
+	 */
+	public JButton getB_guardar() {
+		return b_guardar;
+	}
+	/**
+	 * @param b_guardar the b_guardar to set
+	 */
+	public void setB_guardar(JButton b_guardar) {
+		this.b_guardar = b_guardar;
 	}
 
 	
