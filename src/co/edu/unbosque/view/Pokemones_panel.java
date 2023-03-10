@@ -1,11 +1,4 @@
 package co.edu.unbosque.view;
-/**
- * Panel que se ecnarga de mostrar el ArryList de pokemones
- * 
- * @author Kevin
- * @author Nicolas
- * @author jose
- */
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -21,6 +14,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+/**
+ * Panel que se ecnarga de mostrar el ArryList de pokemones
+ * 
+ * @author Kevin
+ * @author Nicolas
+ * @author jose
+ */
 
 public class Pokemones_panel extends JPanel {
 	/**

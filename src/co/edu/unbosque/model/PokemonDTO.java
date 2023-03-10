@@ -122,21 +122,7 @@ public class PokemonDTO implements Serializable {
 
 	/**
 	 * Metodo para mostrar informacion de los pokemones
-	 * 
-	 * @return id  El id del pokemon
-	 * @return nombre El nombre del pokemon
-	 * @return id_general El id_general del pokemon
-	 * @return tipo El tipo del pokemon
-	 * @return ps El ps del pokemon
-	 * @return ataque El ataque del pokemon
-	 * @return defensa El defensa del pokemon
-	 * @return ataque_especial El ataque_especial del pokemon
-	 * @return defensa_especial La defensa_especial del pokemon
-	 * @return velocidad La velocidad del pokemon
-	 * @return mote El mote del pokemon
-	 * @return movimientos los movimientos del pokemon
-	 * @return nivel El nivel del pokemon
-	 * 
+	 * @return Variable tipo String
 	 */
 	public String info() {
 		return id + "\n" + " nombre=" + nombre + "\n" + " id_general=" + id_general + "\n" + " tipo=" + tipo + "\n"
