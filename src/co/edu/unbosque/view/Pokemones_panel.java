@@ -24,6 +24,31 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class Pokemones_panel extends JPanel {
+<<<<<<< Updated upstream
+=======
+	/**
+	 * Atributo tipo JLabel Que muestran la informacion de las cajas y el fondo del
+	 * panel
+	 */
+	private JLabel titulo, subtitulo,fondo_grid;
+	/**
+	 * Atributo tipo JButton Que muestran los botones para regresar al menu, y pasar
+	 * a la siguiente pagina o volver a la anterior y eliminar
+	 */
+	private JButton b_atras, b_guardar, b_atras_caja, b_siguiente_caja, eliminar;
+	/**
+	 * JPanel de informacion de pokemones principales del usuario
+	 */
+	private Iniciales iniciales;
+	/**
+	 * JPanel de ArrayList de botones que muestra las imagenes de los pokemones
+	 */
+	private Botonera caja;
+	/**
+	 * Metodo constructor <b>pre</b> La existencia de los atributos <br>
+	 * <b>post</b> se instancian los atributos <br>
+	 */
+>>>>>>> Stashed changes
 
 	private JLabel titulo, subtitulo,fondo_grid;
 	private JButton b_atras, b_atras_caja, b_siguiente_caja;
@@ -56,6 +81,16 @@ public class Pokemones_panel extends JPanel {
 		eliminar.setActionCommand("Eliminar");
 		eliminar.setVisible(true);
 
+		
+		b_guardar = new JButton("Guardar");
+		b_guardar.setForeground(Color.white);
+		b_guardar.setBackground(Color.decode("#C81F32"));
+		b_guardar.setFont(new Font("Arial", Font.BOLD, 10));
+		b_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		b_guardar.setBounds(800, 600, 150, 50);
+		b_guardar.setActionCommand("Guardar");
+		b_guardar.setVisible(true);
+		
 		subtitulo = new JLabel("Caja 1");
 		subtitulo.setBounds(500, 20, 300, 100);
 		subtitulo.setFont(new Font("Arial", Font.BOLD, 50));
@@ -119,6 +154,7 @@ public class Pokemones_panel extends JPanel {
 
 		add(fondo_grid);
 		add(eliminar);
+		add(b_guardar);
 		add(subtitulo);
 		add(b_atras);
 		add(b_atras_caja);
@@ -182,6 +218,18 @@ public class Pokemones_panel extends JPanel {
 	 */
 	public void setCaja(Botonera caja) {
 		this.caja = caja;
+	}
+	/**
+	 * @return the b_guardar
+	 */
+	public JButton getB_guardar() {
+		return b_guardar;
+	}
+	/**
+	 * @param b_guardar the b_guardar to set
+	 */
+	public void setB_guardar(JButton b_guardar) {
+		this.b_guardar = b_guardar;
 	}
 
 	public JLabel getTitulo() {

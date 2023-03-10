@@ -108,7 +108,7 @@ public class Botonera extends JPanel {
 		case 1:
 			
 			JButton caja1pokrr = new JButton();
-			caja1pokrr.setText(" ");
+			caja1pokrr.setText(caja1poke.size()+" ");
 
 
 			caja1pokrr.setActionCommand("Boton caja 1 "+(caja1poke.size()+1));
